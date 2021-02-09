@@ -31,6 +31,7 @@ class Server {
         this.app.get('/ultimos', (req, res) => {
             res.json({
                 ok: true,
+                ultimos: this.sockets.ticketList.ultimos13
             })
         })
 
