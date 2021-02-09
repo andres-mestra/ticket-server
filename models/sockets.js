@@ -23,6 +23,11 @@ class Sockets {
                 //Este callback le pasa el valor al cliente
                 callback(nuevoTicket)
             })
+
+            socket.on('siguiente-ticket-trabajar', ( { agente, escritorio }, callback ) => {
+                const suTicket = this.ticketList.asignarTicket(agente, escritorio)
+                callback(suTicket)
+            })
             
         
         });
